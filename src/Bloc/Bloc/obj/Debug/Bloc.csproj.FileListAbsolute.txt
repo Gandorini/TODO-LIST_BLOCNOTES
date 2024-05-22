@@ -11,3 +11,15 @@ C:\Users\2222123\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorin
 C:\Users\2222123\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.pdb
 C:\Users\2222123\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.CriarConta.resources
 C:\Users\2222123\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.Menu.resources
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\bin\Debug\Bloc.exe.config
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\bin\Debug\Bloc.exe
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\bin\Debug\Bloc.pdb
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.csproj.AssemblyReference.cache
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.CriarConta.resources
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.Form1.resources
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.Menu.resources
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.Properties.Resources.resources
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.csproj.GenerateResource.cache
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.csproj.CoreCompileInputs.cache
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.exe
+C:\Users\Gando\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.pdb

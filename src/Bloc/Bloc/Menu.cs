@@ -15,6 +15,37 @@ namespace Bloc
         public Menu()
         {
             InitializeComponent();
+          
+        }
+
+        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

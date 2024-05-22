@@ -14,8 +14,11 @@ namespace Bloc
 {
     public partial class CriarConta : Form
     {
-        private static string stringconexao = "Server=(localdb)\\MSSQLLocalDB;Database=BlocDB_2222123;Trusted_Connection=True;TrustServerCertificate=True";
+        private static string stringconexao = "Server=(localdb)\\MSSQLLocalDB;Database=BlocDB;Trusted_Connection=True;TrustServerCertificate=True";
         private SqlConnection connection = new SqlConnection(stringconexao);
+
+        public string NomeUtilizador { get; set; }
+        public string Password { get; set; }
 
         public CriarConta()
         {
@@ -24,29 +27,35 @@ namespace Bloc
 
         private void CriarConta_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            string NovoUtil = txtNomeCriar.Text;
-            string NovaPasse = txtPalavraPasseCriar.Text;
+            NomeUtilizador = txtNomeCriar.Text.Trim();
+            Password = txtPalavraPasseCriar.Text.Trim();
 
-            if (string.IsNullOrEmpty(NovoUtil) || string.IsNullOrEmpty(NovaPasse))
+            if (string.IsNullOrEmpty(NomeUtilizador) || string.IsNullOrEmpty(Password))
             {
-                MessageBox.Show("Por favor, preencha o nome de utilizador e a palavra-passe.");
+                MessageBox.Show("Por favor, preencha o nome de utilizador e a palavra-passe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Inserir novo utilizador na tabela Utilizador
-            if (NovoUtilizador(NovoUtil, NovaPasse))
+            try
             {
-                MessageBox.Show("Conta criada com sucesso!");
-                this.Close(); 
+                if (NovoUtilizador(NomeUtilizador, Password))
+                {
+                    MessageBox.Show("Conta criada com sucesso!!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao criar a conta. Por favor, tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao criar a conta. Por favor, tente novamente.");
+                MessageBox.Show("Erro ao registrar a conta: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -57,13 +66,18 @@ namespace Bloc
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@Username", username);
-                command.Parameters.AddWithValue("@PasswordHash", password); 
+                command.Parameters.AddWithValue("@PasswordHash", password);
 
                 try
                 {
                     connection.Open();
                     int rowsAffected = command.ExecuteNonQuery();
                     return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao inserir usuário no banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
                 finally
                 {
@@ -72,6 +86,12 @@ namespace Bloc
             }
         }
 
+        private void BtnSairCriarConta_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
-    }
+
+}
 
