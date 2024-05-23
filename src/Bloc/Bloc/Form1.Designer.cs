@@ -2,6 +2,7 @@
 {
     partial class Form1
     {
+  
         /// <summary>
         /// Variável de designer necessária.
         /// </summary>
@@ -46,7 +47,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(64, 244);
+            this.label1.Location = new System.Drawing.Point(73, 217);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 1;
@@ -55,15 +56,19 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(168, 249);
+            this.txtNome.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtNome.Location = new System.Drawing.Point(177, 222);
+            this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
+            this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtNome.Size = new System.Drawing.Size(449, 20);
             this.txtNome.TabIndex = 3;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // txtPalavraPasse
             // 
-            this.txtPalavraPasse.Location = new System.Drawing.Point(168, 324);
+            this.txtPalavraPasse.Location = new System.Drawing.Point(177, 297);
+            this.txtPalavraPasse.Multiline = true;
             this.txtPalavraPasse.Name = "txtPalavraPasse";
             this.txtPalavraPasse.Size = new System.Drawing.Size(449, 20);
             this.txtPalavraPasse.TabIndex = 4;
@@ -73,9 +78,9 @@
             // btnCriarConta
             // 
             this.btnCriarConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCriarConta.Location = new System.Drawing.Point(168, 394);
+            this.btnCriarConta.Location = new System.Drawing.Point(177, 367);
             this.btnCriarConta.Name = "btnCriarConta";
-            this.btnCriarConta.Size = new System.Drawing.Size(121, 30);
+            this.btnCriarConta.Size = new System.Drawing.Size(135, 48);
             this.btnCriarConta.TabIndex = 5;
             this.btnCriarConta.Text = "Criar Conta";
             this.btnCriarConta.UseVisualStyleBackColor = true;
@@ -84,9 +89,9 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(496, 394);
+            this.btnLogin.Location = new System.Drawing.Point(491, 367);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(121, 30);
+            this.btnLogin.Size = new System.Drawing.Size(135, 48);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -98,7 +103,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 318);
+            this.label3.Location = new System.Drawing.Point(25, 297);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 25);
             this.label3.TabIndex = 8;
@@ -121,7 +126,7 @@
             this.BtnSairLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSairLogin.Location = new System.Drawing.Point(12, 12);
             this.BtnSairLogin.Name = "BtnSairLogin";
-            this.BtnSairLogin.Size = new System.Drawing.Size(58, 45);
+            this.BtnSairLogin.Size = new System.Drawing.Size(59, 44);
             this.BtnSairLogin.TabIndex = 12;
             this.BtnSairLogin.Text = "X";
             this.BtnSairLogin.UseVisualStyleBackColor = true;
@@ -131,6 +136,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1268, 642);

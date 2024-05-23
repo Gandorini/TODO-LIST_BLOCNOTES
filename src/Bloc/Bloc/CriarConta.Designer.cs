@@ -41,7 +41,7 @@
             // 
             // txtPalavraPasseCriar
             // 
-            this.txtPalavraPasseCriar.Location = new System.Drawing.Point(219, 334);
+            this.txtPalavraPasseCriar.Location = new System.Drawing.Point(220, 318);
             this.txtPalavraPasseCriar.Name = "txtPalavraPasseCriar";
             this.txtPalavraPasseCriar.Size = new System.Drawing.Size(449, 20);
             this.txtPalavraPasseCriar.TabIndex = 8;
@@ -49,7 +49,7 @@
             // 
             // txtNomeCriar
             // 
-            this.txtNomeCriar.Location = new System.Drawing.Point(219, 259);
+            this.txtNomeCriar.Location = new System.Drawing.Point(220, 243);
             this.txtNomeCriar.Name = "txtNomeCriar";
             this.txtNomeCriar.Size = new System.Drawing.Size(449, 20);
             this.txtNomeCriar.TabIndex = 7;
@@ -60,7 +60,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(5, 328);
+            this.label2.Location = new System.Drawing.Point(6, 312);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(197, 25);
             this.label2.TabIndex = 6;
@@ -72,7 +72,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(53, 254);
+            this.label1.Location = new System.Drawing.Point(54, 238);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 25);
             this.label1.TabIndex = 5;
@@ -93,7 +93,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(334, 441);
+            this.btnRegistrar.Location = new System.Drawing.Point(335, 425);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(201, 45);
             this.btnRegistrar.TabIndex = 10;

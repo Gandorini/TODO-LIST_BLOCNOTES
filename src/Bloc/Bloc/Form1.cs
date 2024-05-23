@@ -22,11 +22,14 @@ namespace Bloc
             private static string stringdeconecxao = "Server=(localdb)\\MSSQLLocalDB;Database=BlocDB;Trusted_Connection=True;TrustServerCertificate=True;";
             private static SqlConnection db = new SqlConnection(stringdeconecxao);
 
-            public Form1()
+        public Form1()
             {
                 InitializeComponent();
-              
+        
             }
+
+
+
 
         private void btnCriarConta_Click(object sender, EventArgs e)
         {
@@ -127,6 +130,8 @@ namespace Bloc
         {
             this.Close();
         }
+
+        
     }
 }
 

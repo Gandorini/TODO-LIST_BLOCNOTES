@@ -15,8 +15,50 @@ namespace Bloc
         public Menu()
         {
             InitializeComponent();
-          
+            AtualizarData();
         }
+  
+        private void timerAtualizacao_Tick(object sender, EventArgs e)
+        {
+
+            AtualizarData();
+        }
+
+        private void AtualizarData()
+        {
+
+            lblDataAtual.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
         {
@@ -47,5 +89,57 @@ namespace Bloc
         {
 
         }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        bool menuExpand = false;
+
+        private void timerMenu_Tick(object sender, EventArgs e)
+        {
+            if (menuExpand == false)
+            {
+                menuContainer.Height += 10;
+                if(menuContainer.Height >= 165)
+                {
+                    timerMenu.Stop();
+                    menuExpand = true;
+                }
+            }
+            else
+            {
+                menuContainer -= 10;
+                if(menuContainer.Height <= 46)
+                {
+                    timerMenu.Stop();
+                    menuExpand = false;
+                }
+            }
+
+        }
     }
+
 }
+
