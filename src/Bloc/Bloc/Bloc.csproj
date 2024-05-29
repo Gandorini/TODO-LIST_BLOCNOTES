@@ -13,6 +13,21 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +49,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hangfire.Core, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.6.0\lib\net45\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Dashboard.Authorization, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Dashboard.Authorization.3.1.0\lib\net45\Hangfire.Dashboard.Authorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -49,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendário.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendário.Designer.cs">
+      <DependentUpon>Calendário.cs</DependentUpon>
+    </Compile>
     <Compile Include="CriarConta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +94,25 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAnotacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnotacoes.Designer.cs">
+      <DependentUpon>FormAnotacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDocumentos.Designer.cs">
+      <DependentUpon>FormDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaLeitura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaLeitura.Designer.cs">
+      <DependentUpon>FormListaLeitura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MdiPropreties.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,11 +121,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Calendário.resx">
+      <DependentUpon>Calendário.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CriarConta.resx">
       <DependentUpon>CriarConta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnotacoes.resx">
+      <DependentUpon>FormAnotacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDocumentos.resx">
+      <DependentUpon>FormDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaLeitura.resx">
+      <DependentUpon>FormListaLeitura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -88,6 +152,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,6 +192,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\book-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-alt1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e1eb2d10bc727f397d3e65d49b1f09cc1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e1eb2d10bc727f397d3e65d49b1f09cc2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brown and Orange Notepad with Pen Simple Education Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brown and Orange Notepad with Pen Simple Education Logo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brown_and_Orange_Notepad_with_Pen_Simple_Education_Logo-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design sem nome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design sem nome1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design sem nome2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

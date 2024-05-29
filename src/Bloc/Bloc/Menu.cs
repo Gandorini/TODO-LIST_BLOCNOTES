@@ -1,17 +1,28 @@
-﻿using System;
+﻿using Hangfire.Annotations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace Bloc
 {
+   
     public partial class Menu : Form
     {
+        FormAnotacoes anotacoes;
+        FormDocumentos documentos;
+        FormListaLeitura listaLeitura;
+        Calendário calendario;
+        
+        
         public Menu()
         {
             InitializeComponent();
@@ -29,35 +40,6 @@ namespace Bloc
 
             lblDataAtual.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
@@ -112,32 +94,155 @@ namespace Bloc
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(anotacoes == null)
+            {
+                anotacoes = new FormAnotacoes();
+                anotacoes.FormClosed +=  anotacoes_FormClosed;
+                anotacoes.MdiParent = this;
+                anotacoes.Show();
+            }
+            else
+            {
+                anotacoes.Activate();
+            }
+        }
+
+        private void anotacoes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            anotacoes = null;
 
         }
 
-        bool menuExpand = false;
+   
 
-        private void timerMenu_Tick(object sender, EventArgs e)
+      
+        bool sidebarExpand = true;
+
+     
+        private void sidebarTransition_Tick(object sender, EventArgs e)
         {
-            if (menuExpand == false)
+            if(sidebarExpand)
             {
-                menuContainer.Height += 10;
-                if(menuContainer.Height >= 165)
+                sidebar.Width -= 5;
+                if (sidebar.Width <= 52)
                 {
-                    timerMenu.Stop();
-                    menuExpand = true;
+                    sidebarExpand = false;
+                    sidebarTransition.Stop();
+
+                    pnAnotacoes.Width = sidebar.Width;
+                    pnListaLeitura.Width = sidebar.Width;
+                    pnDocumento.Width = sidebar.Width;
+                    pnCalendario.Width = sidebar.Width;
+                    pnSair.Width = sidebar.Width;
                 }
             }
             else
             {
-                menuContainer -= 10;
-                if(menuContainer.Height <= 46)
+                sidebar.Width += 5;
+                if (sidebar.Width >= 175)
                 {
-                    timerMenu.Stop();
-                    menuExpand = false;
-                }
-            }
+                    sidebarExpand = true;
+                    sidebarTransition.Stop();
 
+                    pnAnotacoes.Width = sidebar.Width;
+                    pnListaLeitura.Width = sidebar.Width;
+                    pnDocumento.Width = sidebar.Width;
+                    pnCalendario.Width = sidebar.Width;
+                    pnSair.Width = sidebar.Width;
+
+
+
+                }
+
+            }
+        }
+
+        private void btnHam_Click(object sender, EventArgs e)
+        {
+            sidebarTransition.Start();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void menuContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListaLeitura_Click(object sender, EventArgs e)
+        {
+            if (listaLeitura == null)
+            {
+                listaLeitura = new FormListaLeitura();
+                listaLeitura.FormClosed += listaleitura_FormClosed;
+                listaLeitura.MdiParent = this;
+                listaLeitura.Show();
+            }
+            else
+            {
+                listaLeitura.Activate();
+            }
+        }
+
+        private void listaleitura_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           listaLeitura = null;
+
+        }
+
+        private void btnDocumentos_Click(object sender, EventArgs e)
+        {
+            if (documentos == null)
+            {
+                documentos = new FormDocumentos();
+                documentos.FormClosed += documentos_FormClosed;
+                documentos.MdiParent = this;
+                documentos.Show();
+            }
+            else
+            {
+                documentos.Activate();
+            }
+        }
+
+        private void documentos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            documentos = null;
+
+        }
+
+        private void btnCalendario_Click(object sender, EventArgs e)
+        {
+            if (documentos == null)
+            {
+                calendario = new Calendário();
+                calendario.FormClosed += calendario_FormClosed;
+                calendario.MdiParent = this;
+                calendario.Show();
+            }
+            else
+            {
+                calendario.Activate();
+            }
+        }
+
+        private void calendario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            calendario = null;
+
+        }
+
+        private void btnSair_Click_1(object sender, EventArgs e)
+        {
+           this.Close();
         }
     }
 

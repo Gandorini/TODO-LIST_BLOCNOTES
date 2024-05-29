@@ -34,29 +34,25 @@
             this.lblDataAtual = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnAnotacoes = new System.Windows.Forms.Panel();
+            this.pnListaLeitura = new System.Windows.Forms.Panel();
+            this.pnDocumento = new System.Windows.Forms.Panel();
+            this.pnCalendario = new System.Windows.Forms.Panel();
+            this.pnSair = new System.Windows.Forms.Panel();
+            this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.btnAnotacoes = new System.Windows.Forms.Button();
             this.btnListaLeitura = new System.Windows.Forms.Button();
             this.btnDocumentos = new System.Windows.Forms.Button();
-            this.btnCalendário = new System.Windows.Forms.Button();
+            this.btnCalendario = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timerMenu = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            this.flowLayoutPanelMenu.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.sidebar.SuspendLayout();
+            this.pnAnotacoes.SuspendLayout();
+            this.pnListaLeitura.SuspendLayout();
+            this.pnDocumento.SuspendLayout();
+            this.pnCalendario.SuspendLayout();
+            this.pnSair.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDataAtual
@@ -65,7 +61,7 @@
             this.lblDataAtual.BackColor = System.Drawing.Color.Transparent;
             this.lblDataAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.lblDataAtual.ForeColor = System.Drawing.Color.Black;
-            this.lblDataAtual.Location = new System.Drawing.Point(1148, 9);
+            this.lblDataAtual.Location = new System.Drawing.Point(1148, 8);
             this.lblDataAtual.Name = "lblDataAtual";
             this.lblDataAtual.Size = new System.Drawing.Size(100, 24);
             this.lblDataAtual.TabIndex = 14;
@@ -76,231 +72,229 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.lblDataAtual);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1271, 43);
+            this.panel1.Size = new System.Drawing.Size(1271, 39);
             this.panel1.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label1.Location = new System.Drawing.Point(145, 8);
+            this.label1.Location = new System.Drawing.Point(12, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(175, 25);
             this.label1.TabIndex = 22;
             this.label1.Text = "BLOC | BEST NOTES";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // flowLayoutPanelMenu
+            // sidebar
             // 
-            this.flowLayoutPanelMenu.BackColor = System.Drawing.Color.RosyBrown;
-            this.flowLayoutPanelMenu.Controls.Add(this.panel2);
-            this.flowLayoutPanelMenu.Controls.Add(this.panel3);
-            this.flowLayoutPanelMenu.Controls.Add(this.panel4);
-            this.flowLayoutPanelMenu.Controls.Add(this.panel5);
-            this.flowLayoutPanelMenu.Controls.Add(this.panel6);
-            this.flowLayoutPanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanelMenu.Location = new System.Drawing.Point(0, 43);
-            this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
-            this.flowLayoutPanelMenu.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.flowLayoutPanelMenu.Size = new System.Drawing.Size(177, 596);
-            this.flowLayoutPanelMenu.TabIndex = 21;
+            this.sidebar.BackColor = System.Drawing.Color.White;
+            this.sidebar.Controls.Add(this.pnAnotacoes);
+            this.sidebar.Controls.Add(this.pnListaLeitura);
+            this.sidebar.Controls.Add(this.pnDocumento);
+            this.sidebar.Controls.Add(this.pnCalendario);
+            this.sidebar.Controls.Add(this.pnSair);
+            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.sidebar.Location = new System.Drawing.Point(0, 39);
+            this.sidebar.Name = "sidebar";
+            this.sidebar.Padding = new System.Windows.Forms.Padding(0, 100, 0, 20);
+            this.sidebar.Size = new System.Drawing.Size(177, 597);
+            this.sidebar.TabIndex = 21;
+            this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.menuContainer_Paint);
             // 
-            // panel2
+            // pnAnotacoes
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.btnAnotacoes);
-            this.panel2.Location = new System.Drawing.Point(3, 33);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(174, 52);
-            this.panel2.TabIndex = 23;
+            this.pnAnotacoes.BackColor = System.Drawing.Color.Transparent;
+            this.pnAnotacoes.Controls.Add(this.btnAnotacoes);
+            this.pnAnotacoes.Location = new System.Drawing.Point(3, 103);
+            this.pnAnotacoes.Name = "pnAnotacoes";
+            this.pnAnotacoes.Size = new System.Drawing.Size(174, 58);
+            this.pnAnotacoes.TabIndex = 23;
+            this.pnAnotacoes.UseWaitCursor = true;
             // 
-            // panel3
+            // pnListaLeitura
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.btnListaLeitura);
-            this.panel3.Location = new System.Drawing.Point(3, 91);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(174, 52);
-            this.panel3.TabIndex = 24;
+            this.pnListaLeitura.BackColor = System.Drawing.Color.Transparent;
+            this.pnListaLeitura.Controls.Add(this.btnListaLeitura);
+            this.pnListaLeitura.Location = new System.Drawing.Point(3, 167);
+            this.pnListaLeitura.Name = "pnListaLeitura";
+            this.pnListaLeitura.Size = new System.Drawing.Size(174, 58);
+            this.pnListaLeitura.TabIndex = 28;
+            this.pnListaLeitura.UseWaitCursor = true;
             // 
-            // panel4
+            // pnDocumento
             // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.btnDocumentos);
-            this.panel4.Location = new System.Drawing.Point(3, 149);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(174, 52);
-            this.panel4.TabIndex = 25;
+            this.pnDocumento.BackColor = System.Drawing.Color.Transparent;
+            this.pnDocumento.Controls.Add(this.btnDocumentos);
+            this.pnDocumento.Location = new System.Drawing.Point(3, 231);
+            this.pnDocumento.Name = "pnDocumento";
+            this.pnDocumento.Size = new System.Drawing.Size(174, 58);
+            this.pnDocumento.TabIndex = 29;
+            this.pnDocumento.UseWaitCursor = true;
             // 
-            // panel5
+            // pnCalendario
             // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.btnCalendário);
-            this.panel5.Location = new System.Drawing.Point(3, 207);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(174, 52);
-            this.panel5.TabIndex = 26;
+            this.pnCalendario.BackColor = System.Drawing.Color.Transparent;
+            this.pnCalendario.Controls.Add(this.btnCalendario);
+            this.pnCalendario.Location = new System.Drawing.Point(3, 295);
+            this.pnCalendario.Name = "pnCalendario";
+            this.pnCalendario.Size = new System.Drawing.Size(174, 58);
+            this.pnCalendario.TabIndex = 30;
+            this.pnCalendario.UseWaitCursor = true;
             // 
-            // panel6
+            // pnSair
             // 
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.Controls.Add(this.btnSair);
-            this.panel6.Location = new System.Drawing.Point(3, 265);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(174, 52);
-            this.panel6.TabIndex = 27;
+            this.pnSair.BackColor = System.Drawing.Color.Transparent;
+            this.pnSair.Controls.Add(this.btnSair);
+            this.pnSair.Location = new System.Drawing.Point(3, 359);
+            this.pnSair.Name = "pnSair";
+            this.pnSair.Size = new System.Drawing.Size(174, 57);
+            this.pnSair.TabIndex = 31;
+            this.pnSair.UseWaitCursor = true;
+            // 
+            // sidebarTransition
+            // 
+            this.sidebarTransition.Interval = 10;
+            this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
             // 
             // btnAnotacoes
             // 
             this.btnAnotacoes.BackColor = System.Drawing.Color.Transparent;
             this.btnAnotacoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAnotacoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAnotacoes.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnAnotacoes.ForeColor = System.Drawing.Color.Black;
-            this.btnAnotacoes.Image = global::Bloc.Properties.Resources.edit;
+            this.btnAnotacoes.Image = global::Bloc.Properties.Resources.edit1;
             this.btnAnotacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnotacoes.Location = new System.Drawing.Point(0, 3);
+            this.btnAnotacoes.Location = new System.Drawing.Point(0, 0);
             this.btnAnotacoes.Name = "btnAnotacoes";
-            this.btnAnotacoes.Size = new System.Drawing.Size(171, 46);
+            this.btnAnotacoes.Size = new System.Drawing.Size(174, 58);
             this.btnAnotacoes.TabIndex = 22;
             this.btnAnotacoes.Text = "Anotações";
             this.btnAnotacoes.UseVisualStyleBackColor = false;
+            this.btnAnotacoes.UseWaitCursor = true;
             this.btnAnotacoes.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnListaLeitura
             // 
             this.btnListaLeitura.BackColor = System.Drawing.Color.Transparent;
             this.btnListaLeitura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnListaLeitura.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnListaLeitura.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnListaLeitura.ForeColor = System.Drawing.Color.Black;
-            this.btnListaLeitura.Image = global::Bloc.Properties.Resources.book_alt;
+            this.btnListaLeitura.Image = global::Bloc.Properties.Resources.book_alt1;
             this.btnListaLeitura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListaLeitura.Location = new System.Drawing.Point(0, 3);
+            this.btnListaLeitura.Location = new System.Drawing.Point(0, 0);
             this.btnListaLeitura.Name = "btnListaLeitura";
-            this.btnListaLeitura.Size = new System.Drawing.Size(171, 46);
+            this.btnListaLeitura.Size = new System.Drawing.Size(174, 58);
             this.btnListaLeitura.TabIndex = 22;
-            this.btnListaLeitura.Text = "Lista de Leitura";
+            this.btnListaLeitura.Text = "Lista de leitura";
             this.btnListaLeitura.UseVisualStyleBackColor = false;
+            this.btnListaLeitura.UseWaitCursor = true;
+            this.btnListaLeitura.Click += new System.EventHandler(this.btnListaLeitura_Click);
             // 
             // btnDocumentos
             // 
             this.btnDocumentos.BackColor = System.Drawing.Color.Transparent;
             this.btnDocumentos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDocumentos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDocumentos.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnDocumentos.ForeColor = System.Drawing.Color.Black;
-            this.btnDocumentos.Image = global::Bloc.Properties.Resources.folder;
+            this.btnDocumentos.Image = global::Bloc.Properties.Resources.folder1;
             this.btnDocumentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocumentos.Location = new System.Drawing.Point(0, 3);
+            this.btnDocumentos.Location = new System.Drawing.Point(0, 0);
             this.btnDocumentos.Name = "btnDocumentos";
-            this.btnDocumentos.Size = new System.Drawing.Size(171, 46);
+            this.btnDocumentos.Size = new System.Drawing.Size(174, 58);
             this.btnDocumentos.TabIndex = 22;
             this.btnDocumentos.Text = "Documentos";
             this.btnDocumentos.UseVisualStyleBackColor = false;
+            this.btnDocumentos.UseWaitCursor = true;
+            this.btnDocumentos.Click += new System.EventHandler(this.btnDocumentos_Click);
             // 
-            // btnCalendário
+            // btnCalendario
             // 
-            this.btnCalendário.BackColor = System.Drawing.Color.Transparent;
-            this.btnCalendário.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCalendário.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnCalendário.ForeColor = System.Drawing.Color.Black;
-            this.btnCalendário.Image = global::Bloc.Properties.Resources.calendar_clock;
-            this.btnCalendário.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendário.Location = new System.Drawing.Point(0, 3);
-            this.btnCalendário.Name = "btnCalendário";
-            this.btnCalendário.Size = new System.Drawing.Size(171, 46);
-            this.btnCalendário.TabIndex = 22;
-            this.btnCalendário.Text = "Calendário";
-            this.btnCalendário.UseVisualStyleBackColor = false;
+            this.btnCalendario.BackColor = System.Drawing.Color.Transparent;
+            this.btnCalendario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCalendario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCalendario.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnCalendario.ForeColor = System.Drawing.Color.Black;
+            this.btnCalendario.Image = global::Bloc.Properties.Resources.calendar;
+            this.btnCalendario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalendario.Location = new System.Drawing.Point(0, 0);
+            this.btnCalendario.Name = "btnCalendario";
+            this.btnCalendario.Size = new System.Drawing.Size(174, 58);
+            this.btnCalendario.TabIndex = 22;
+            this.btnCalendario.Text = "Caléndario";
+            this.btnCalendario.UseVisualStyleBackColor = false;
+            this.btnCalendario.UseWaitCursor = true;
+            this.btnCalendario.Click += new System.EventHandler(this.btnCalendario_Click);
             // 
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.Transparent;
             this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSair.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSair.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnSair.ForeColor = System.Drawing.Color.Black;
-            this.btnSair.Image = global::Bloc.Properties.Resources.exit;
+            this.btnSair.Image = global::Bloc.Properties.Resources.exit1;
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSair.Location = new System.Drawing.Point(0, 3);
+            this.btnSair.Location = new System.Drawing.Point(0, 0);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(171, 46);
+            this.btnSair.Size = new System.Drawing.Size(174, 57);
             this.btnSair.TabIndex = 22;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Bloc.Properties.Resources.menu_burger;
-            this.pictureBox2.Location = new System.Drawing.Point(46, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 34);
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Bloc.Properties.Resources.e1eb2d10bc727f397d3e65d49b1f09cc;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1271, 607);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            // 
-            // timerMenu
-            // 
-            this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
+            this.btnSair.UseWaitCursor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1271, 639);
-            this.Controls.Add(this.flowLayoutPanelMenu);
+            this.ClientSize = new System.Drawing.Size(1271, 636);
+            this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flowLayoutPanelMenu.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.sidebar.ResumeLayout(false);
+            this.pnAnotacoes.ResumeLayout(false);
+            this.pnListaLeitura.ResumeLayout(false);
+            this.pnDocumento.ResumeLayout(false);
+            this.pnCalendario.ResumeLayout(false);
+            this.pnSair.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Timer timerAtualizacao;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblDataAtual;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.FlowLayoutPanel sidebar;
+        private System.Windows.Forms.Panel pnAnotacoes;
         private System.Windows.Forms.Button btnAnotacoes;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Timer sidebarTransition;
+        private System.Windows.Forms.Panel pnListaLeitura;
         private System.Windows.Forms.Button btnListaLeitura;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnDocumento;
         private System.Windows.Forms.Button btnDocumentos;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnCalendário;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pnCalendario;
+        private System.Windows.Forms.Button btnCalendario;
+        private System.Windows.Forms.Panel pnSair;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Timer timerMenu;
     }
 }

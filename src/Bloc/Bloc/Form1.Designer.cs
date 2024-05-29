@@ -36,8 +36,8 @@
             this.btnCriarConta = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnSairLogin = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,6 +109,17 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Palavra-Passe:";
             // 
+            // BtnSairLogin
+            // 
+            this.BtnSairLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSairLogin.Location = new System.Drawing.Point(12, 12);
+            this.BtnSairLogin.Name = "BtnSairLogin";
+            this.BtnSairLogin.Size = new System.Drawing.Size(59, 44);
+            this.BtnSairLogin.TabIndex = 12;
+            this.BtnSairLogin.Text = "X";
+            this.BtnSairLogin.UseVisualStyleBackColor = true;
+            this.BtnSairLogin.Click += new System.EventHandler(this.BtnSairLogin_Click_1);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -121,17 +132,6 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // BtnSairLogin
-            // 
-            this.BtnSairLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSairLogin.Location = new System.Drawing.Point(12, 12);
-            this.BtnSairLogin.Name = "BtnSairLogin";
-            this.BtnSairLogin.Size = new System.Drawing.Size(59, 44);
-            this.BtnSairLogin.TabIndex = 12;
-            this.BtnSairLogin.Text = "X";
-            this.BtnSairLogin.UseVisualStyleBackColor = true;
-            this.BtnSairLogin.Click += new System.EventHandler(this.BtnSairLogin_Click_1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,7 +139,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Bloc.Properties.Resources.Design_sem_nome2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1268, 642);
             this.Controls.Add(this.BtnSairLogin);
             this.Controls.Add(this.pictureBox1);
@@ -150,6 +151,8 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";

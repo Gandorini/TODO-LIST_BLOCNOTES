@@ -17,6 +17,7 @@ namespace Bloc
 
     public partial class Form1 : Form
     {
+        
 
         
             private static string stringdeconecxao = "Server=(localdb)\\MSSQLLocalDB;Database=BlocDB;Trusted_Connection=True;TrustServerCertificate=True;";
