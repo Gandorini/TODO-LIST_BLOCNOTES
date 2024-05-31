@@ -27,8 +27,17 @@ namespace Bloc
         {
             InitializeComponent();
             AtualizarData();
+            mdiProp();
         }
-  
+
+
+        private void mdiProp()
+        {
+            this.SetBevel(false);
+            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.FromArgb(232,234,237);
+        }
+
+
         private void timerAtualizacao_Tick(object sender, EventArgs e)
         {
 
@@ -124,7 +133,7 @@ namespace Bloc
             if(sidebarExpand)
             {
                 sidebar.Width -= 5;
-                if (sidebar.Width <= 52)
+                if (sidebar.Width <= 43)
                 {
                     sidebarExpand = false;
                     sidebarTransition.Stop();
@@ -139,7 +148,7 @@ namespace Bloc
             else
             {
                 sidebar.Width += 5;
-                if (sidebar.Width >= 175)
+                if (sidebar.Width >= 221)
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
@@ -157,7 +166,7 @@ namespace Bloc
             }
         }
 
-        private void btnHam_Click(object sender, EventArgs e)
+        private void btnHam_Click_1(object sender, EventArgs e)
         {
             sidebarTransition.Start();
         }
@@ -244,6 +253,7 @@ namespace Bloc
         {
            this.Close();
         }
+
     }
 
 }
