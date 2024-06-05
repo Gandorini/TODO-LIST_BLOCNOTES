@@ -15,6 +15,15 @@ namespace Bloc
         public FormAnotacoes()
         {
             InitializeComponent();
+
+            txtAnotacoesTexto.Multiline = true;
+            txtAnotacoesTexto.Width = 857;
+            txtAnotacoesTexto.Height = 500;
+        }
+
+        private void txtAnotacoesTexto_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

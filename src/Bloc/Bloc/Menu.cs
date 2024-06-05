@@ -21,13 +21,13 @@ namespace Bloc
         FormDocumentos documentos;
         FormListaLeitura listaLeitura;
         Calendário calendario;
-        
-        
+
         public Menu()
         {
             InitializeComponent();
             AtualizarData();
             mdiProp();
+
         }
 
 
@@ -49,91 +49,15 @@ namespace Bloc
 
             lblDataAtual.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
-
-
-        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(anotacoes == null)
-            {
-                anotacoes = new FormAnotacoes();
-                anotacoes.FormClosed +=  anotacoes_FormClosed;
-                anotacoes.MdiParent = this;
-                anotacoes.Show();
-            }
-            else
-            {
-                anotacoes.Activate();
-            }
-        }
-
-        private void anotacoes_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            anotacoes = null;
-
-        }
-
-   
-
-      
+    
         bool sidebarExpand = true;
 
-     
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
             if(sidebarExpand)
             {
                 sidebar.Width -= 5;
-                if (sidebar.Width <= 43)
+                if (sidebar.Width <= 57)
                 {
                     sidebarExpand = false;
                     sidebarTransition.Stop();
@@ -148,7 +72,7 @@ namespace Bloc
             else
             {
                 sidebar.Width += 5;
-                if (sidebar.Width >= 221)
+                if (sidebar.Width >= 223)
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
@@ -186,9 +110,57 @@ namespace Bloc
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (documentos != null)
+            {
+                documentos.Close();
+            }
+            if (calendario != null)
+            {
+                calendario.Close();
+            }
+            if (listaLeitura != null)
+            {
+                listaLeitura.Close();
+            }
+
+            if (anotacoes == null || anotacoes.IsDisposed)
+            {
+                anotacoes = new FormAnotacoes();
+                anotacoes.FormClosed += anotacoes_FormClosed;
+                anotacoes.MdiParent = this;
+                anotacoes.Show();
+            }
+            else
+            {
+                anotacoes.Activate();
+            }
+        }
+
+        private void anotacoes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            anotacoes = null;
+
+        }
         private void btnListaLeitura_Click(object sender, EventArgs e)
         {
-            if (listaLeitura == null)
+            if (documentos != null)
+            {
+                documentos.Close();
+            }
+            if (calendario != null)
+            {
+                calendario.Close();  
+            }
+            if (anotacoes != null)
+            {
+                anotacoes.Close();
+            }
+
+
+
+            if (listaLeitura == null || listaLeitura.IsDisposed)
             {
                 listaLeitura = new FormListaLeitura();
                 listaLeitura.FormClosed += listaleitura_FormClosed;
@@ -209,7 +181,19 @@ namespace Bloc
 
         private void btnDocumentos_Click(object sender, EventArgs e)
         {
-            if (documentos == null)
+            if (listaLeitura != null)
+            {
+               listaLeitura.Close();
+            }
+            if (calendario != null)
+            {
+                calendario.Close();
+            }
+            if (anotacoes != null)
+            {
+                anotacoes.Close();
+            }
+            if (documentos == null || documentos.IsDisposed)
             {
                 documentos = new FormDocumentos();
                 documentos.FormClosed += documentos_FormClosed;
@@ -230,7 +214,20 @@ namespace Bloc
 
         private void btnCalendario_Click(object sender, EventArgs e)
         {
-            if (documentos == null)
+            if (listaLeitura != null)
+            {
+                listaLeitura.Close();
+            }
+            if (documentos != null)
+            {
+                documentos.Close();
+            }
+            if (anotacoes != null)
+            {
+                anotacoes.Close();
+            }
+
+            if (calendario == null || calendario.IsDisposed)
             {
                 calendario = new Calendário();
                 calendario.FormClosed += calendario_FormClosed;
