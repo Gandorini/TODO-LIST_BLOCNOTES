@@ -103,7 +103,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Bloc.Properties.Resources.Brown_and_Orange_Notepad_with_Pen_Simple_Education_Logo_removebg_preview;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.ImageLocation = "";
             this.pictureBox1.Location = new System.Drawing.Point(690, 50);
             this.pictureBox1.Name = "pictureBox1";
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Bloc.Properties.Resources.Design_sem_nome1;
+            this.BackgroundImage = global::Bloc.Properties.Resources.pngtree_abstract_gradient_background_in_shades_of_gray_3d_render_picture_image_3550157_transformed;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1272, 640);
             this.Controls.Add(this.BtnSairCriarConta);

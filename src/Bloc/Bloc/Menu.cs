@@ -57,7 +57,7 @@ namespace Bloc
             if(sidebarExpand)
             {
                 sidebar.Width -= 5;
-                if (sidebar.Width <= 57)
+                if (sidebar.Width <= 101)
                 {
                     sidebarExpand = false;
                     sidebarTransition.Stop();

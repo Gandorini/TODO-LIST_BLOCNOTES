@@ -333,6 +333,39 @@ namespace Bloc.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngtree_abstract_gradient_background_in_shades_of_gray_3d_render_picture_image_3550157_transformed {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-abstract-gradient-background-in-shades-of-gray-3d-render-picture-image_35" +
+                        "50157-transformed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_abstract_gradient_background_in_shades_of_gray_3d_render_picture_image_3550157_transformed1 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-abstract-gradient-background-in-shades-of-gray-3d-render-picture-image_35" +
+                        "50157-transformed1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_abstract_gradient_background_in_shades_of_gray_3d_render_picture_image_3550157_transformed2 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-abstract-gradient-background-in-shades-of-gray-3d-render-picture-image_35" +
+                        "50157-transformed2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Reiko_and_Sebastian_A_HD {
             get {
                 object obj = ResourceManager.GetObject("Reiko and Sebastian A HD", resourceCulture);

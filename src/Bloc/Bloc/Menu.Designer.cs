@@ -33,30 +33,31 @@
             this.timerAtualizacao = new System.Windows.Forms.Timer(this.components);
             this.lblDataAtual = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnHam = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnDocumento = new System.Windows.Forms.Panel();
-            this.btnDocumentos = new System.Windows.Forms.Button();
-            this.pnCalendario = new System.Windows.Forms.Panel();
-            this.btnCalendario = new System.Windows.Forms.Button();
-            this.pnListaLeitura = new System.Windows.Forms.Panel();
-            this.btnListaLeitura = new System.Windows.Forms.Button();
             this.pnAnotacoes = new System.Windows.Forms.Panel();
-            this.btnAnotacoes = new System.Windows.Forms.Button();
+            this.pnListaLeitura = new System.Windows.Forms.Panel();
+            this.pnDocumento = new System.Windows.Forms.Panel();
+            this.pnCalendario = new System.Windows.Forms.Panel();
             this.pnSair = new System.Windows.Forms.Panel();
-            this.btnSair = new System.Windows.Forms.Button();
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAnotacoes = new System.Windows.Forms.Button();
+            this.btnListaLeitura = new System.Windows.Forms.Button();
+            this.btnDocumentos = new System.Windows.Forms.Button();
+            this.btnCalendario = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnHam = new System.Windows.Forms.PictureBox();
+            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.sidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnAnotacoes.SuspendLayout();
+            this.pnListaLeitura.SuspendLayout();
             this.pnDocumento.SuspendLayout();
             this.pnCalendario.SuspendLayout();
-            this.pnListaLeitura.SuspendLayout();
-            this.pnAnotacoes.SuspendLayout();
             this.pnSair.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDataAtual
@@ -65,7 +66,7 @@
             this.lblDataAtual.BackColor = System.Drawing.Color.Transparent;
             this.lblDataAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.lblDataAtual.ForeColor = System.Drawing.Color.Black;
-            this.lblDataAtual.Location = new System.Drawing.Point(1149, 8);
+            this.lblDataAtual.Location = new System.Drawing.Point(118, 3);
             this.lblDataAtual.Name = "lblDataAtual";
             this.lblDataAtual.Size = new System.Drawing.Size(100, 24);
             this.lblDataAtual.TabIndex = 14;
@@ -75,6 +76,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.nightControlBox1);
             this.panel1.Controls.Add(this.btnHam);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblDataAtual);
@@ -82,17 +84,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1271, 39);
             this.panel1.TabIndex = 20;
-            // 
-            // btnHam
-            // 
-            this.btnHam.Image = ((System.Drawing.Image)(resources.GetObject("btnHam.Image")));
-            this.btnHam.Location = new System.Drawing.Point(11, 3);
-            this.btnHam.Name = "btnHam";
-            this.btnHam.Size = new System.Drawing.Size(45, 30);
-            this.btnHam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnHam.TabIndex = 23;
-            this.btnHam.TabStop = false;
-            this.btnHam.Click += new System.EventHandler(this.btnHam_Click_1);
             // 
             // label1
             // 
@@ -118,6 +109,61 @@
             this.sidebar.TabIndex = 21;
             this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.menuContainer_Paint);
             // 
+            // pnAnotacoes
+            // 
+            this.pnAnotacoes.BackColor = System.Drawing.Color.Black;
+            this.pnAnotacoes.Controls.Add(this.btnAnotacoes);
+            this.pnAnotacoes.Location = new System.Drawing.Point(3, 175);
+            this.pnAnotacoes.Name = "pnAnotacoes";
+            this.pnAnotacoes.Size = new System.Drawing.Size(216, 58);
+            this.pnAnotacoes.TabIndex = 23;
+            this.pnAnotacoes.UseWaitCursor = true;
+            // 
+            // pnListaLeitura
+            // 
+            this.pnListaLeitura.BackColor = System.Drawing.Color.Black;
+            this.pnListaLeitura.Controls.Add(this.btnListaLeitura);
+            this.pnListaLeitura.Location = new System.Drawing.Point(3, 239);
+            this.pnListaLeitura.Name = "pnListaLeitura";
+            this.pnListaLeitura.Size = new System.Drawing.Size(216, 58);
+            this.pnListaLeitura.TabIndex = 28;
+            this.pnListaLeitura.UseWaitCursor = true;
+            // 
+            // pnDocumento
+            // 
+            this.pnDocumento.BackColor = System.Drawing.Color.Black;
+            this.pnDocumento.Controls.Add(this.btnDocumentos);
+            this.pnDocumento.Location = new System.Drawing.Point(3, 303);
+            this.pnDocumento.Name = "pnDocumento";
+            this.pnDocumento.Size = new System.Drawing.Size(216, 58);
+            this.pnDocumento.TabIndex = 29;
+            this.pnDocumento.UseWaitCursor = true;
+            // 
+            // pnCalendario
+            // 
+            this.pnCalendario.BackColor = System.Drawing.Color.Black;
+            this.pnCalendario.Controls.Add(this.btnCalendario);
+            this.pnCalendario.Location = new System.Drawing.Point(3, 367);
+            this.pnCalendario.Name = "pnCalendario";
+            this.pnCalendario.Size = new System.Drawing.Size(216, 58);
+            this.pnCalendario.TabIndex = 30;
+            this.pnCalendario.UseWaitCursor = true;
+            // 
+            // pnSair
+            // 
+            this.pnSair.BackColor = System.Drawing.Color.Black;
+            this.pnSair.Controls.Add(this.btnSair);
+            this.pnSair.Location = new System.Drawing.Point(3, 431);
+            this.pnSair.Name = "pnSair";
+            this.pnSair.Size = new System.Drawing.Size(216, 57);
+            this.pnSair.TabIndex = 31;
+            this.pnSair.UseWaitCursor = true;
+            // 
+            // sidebarTransition
+            // 
+            this.sidebarTransition.Interval = 10;
+            this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
@@ -130,15 +176,47 @@
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
             // 
-            // pnDocumento
+            // btnAnotacoes
             // 
-            this.pnDocumento.BackColor = System.Drawing.Color.Black;
-            this.pnDocumento.Controls.Add(this.btnDocumentos);
-            this.pnDocumento.Location = new System.Drawing.Point(3, 303);
-            this.pnDocumento.Name = "pnDocumento";
-            this.pnDocumento.Size = new System.Drawing.Size(216, 58);
-            this.pnDocumento.TabIndex = 29;
-            this.pnDocumento.UseWaitCursor = true;
+            this.btnAnotacoes.BackColor = System.Drawing.Color.Black;
+            this.btnAnotacoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAnotacoes.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.btnAnotacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAnotacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnotacoes.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAnotacoes.ForeColor = System.Drawing.Color.White;
+            this.btnAnotacoes.Image = global::Bloc.Properties.Resources.edit__1_;
+            this.btnAnotacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnotacoes.Location = new System.Drawing.Point(0, 0);
+            this.btnAnotacoes.Name = "btnAnotacoes";
+            this.btnAnotacoes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAnotacoes.Size = new System.Drawing.Size(216, 58);
+            this.btnAnotacoes.TabIndex = 22;
+            this.btnAnotacoes.Text = "Anotações";
+            this.btnAnotacoes.UseVisualStyleBackColor = false;
+            this.btnAnotacoes.UseWaitCursor = true;
+            this.btnAnotacoes.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnListaLeitura
+            // 
+            this.btnListaLeitura.BackColor = System.Drawing.Color.Black;
+            this.btnListaLeitura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnListaLeitura.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.btnListaLeitura.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnListaLeitura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListaLeitura.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnListaLeitura.ForeColor = System.Drawing.Color.White;
+            this.btnListaLeitura.Image = global::Bloc.Properties.Resources.book_open_cover;
+            this.btnListaLeitura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListaLeitura.Location = new System.Drawing.Point(0, 0);
+            this.btnListaLeitura.Name = "btnListaLeitura";
+            this.btnListaLeitura.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnListaLeitura.Size = new System.Drawing.Size(216, 58);
+            this.btnListaLeitura.TabIndex = 22;
+            this.btnListaLeitura.Text = "Lista de leitura";
+            this.btnListaLeitura.UseVisualStyleBackColor = false;
+            this.btnListaLeitura.UseWaitCursor = true;
+            this.btnListaLeitura.Click += new System.EventHandler(this.btnListaLeitura_Click);
             // 
             // btnDocumentos
             // 
@@ -161,16 +239,6 @@
             this.btnDocumentos.UseWaitCursor = true;
             this.btnDocumentos.Click += new System.EventHandler(this.btnDocumentos_Click);
             // 
-            // pnCalendario
-            // 
-            this.pnCalendario.BackColor = System.Drawing.Color.Black;
-            this.pnCalendario.Controls.Add(this.btnCalendario);
-            this.pnCalendario.Location = new System.Drawing.Point(3, 367);
-            this.pnCalendario.Name = "pnCalendario";
-            this.pnCalendario.Size = new System.Drawing.Size(216, 58);
-            this.pnCalendario.TabIndex = 30;
-            this.pnCalendario.UseWaitCursor = true;
-            // 
             // btnCalendario
             // 
             this.btnCalendario.BackColor = System.Drawing.Color.Black;
@@ -192,76 +260,6 @@
             this.btnCalendario.UseWaitCursor = true;
             this.btnCalendario.Click += new System.EventHandler(this.btnCalendario_Click);
             // 
-            // pnListaLeitura
-            // 
-            this.pnListaLeitura.BackColor = System.Drawing.Color.Black;
-            this.pnListaLeitura.Controls.Add(this.btnListaLeitura);
-            this.pnListaLeitura.Location = new System.Drawing.Point(3, 239);
-            this.pnListaLeitura.Name = "pnListaLeitura";
-            this.pnListaLeitura.Size = new System.Drawing.Size(216, 58);
-            this.pnListaLeitura.TabIndex = 28;
-            this.pnListaLeitura.UseWaitCursor = true;
-            // 
-            // btnListaLeitura
-            // 
-            this.btnListaLeitura.BackColor = System.Drawing.Color.Black;
-            this.btnListaLeitura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnListaLeitura.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnListaLeitura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListaLeitura.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnListaLeitura.ForeColor = System.Drawing.Color.White;
-            this.btnListaLeitura.Image = global::Bloc.Properties.Resources.book_open_cover;
-            this.btnListaLeitura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListaLeitura.Location = new System.Drawing.Point(0, 0);
-            this.btnListaLeitura.Name = "btnListaLeitura";
-            this.btnListaLeitura.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnListaLeitura.Size = new System.Drawing.Size(216, 58);
-            this.btnListaLeitura.TabIndex = 22;
-            this.btnListaLeitura.Text = "Lista de leitura";
-            this.btnListaLeitura.UseVisualStyleBackColor = false;
-            this.btnListaLeitura.UseWaitCursor = true;
-            this.btnListaLeitura.Click += new System.EventHandler(this.btnListaLeitura_Click);
-            // 
-            // pnAnotacoes
-            // 
-            this.pnAnotacoes.BackColor = System.Drawing.Color.Black;
-            this.pnAnotacoes.Controls.Add(this.btnAnotacoes);
-            this.pnAnotacoes.Location = new System.Drawing.Point(3, 175);
-            this.pnAnotacoes.Name = "pnAnotacoes";
-            this.pnAnotacoes.Size = new System.Drawing.Size(216, 58);
-            this.pnAnotacoes.TabIndex = 23;
-            this.pnAnotacoes.UseWaitCursor = true;
-            // 
-            // btnAnotacoes
-            // 
-            this.btnAnotacoes.BackColor = System.Drawing.Color.Black;
-            this.btnAnotacoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAnotacoes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAnotacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnotacoes.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnAnotacoes.ForeColor = System.Drawing.Color.White;
-            this.btnAnotacoes.Image = global::Bloc.Properties.Resources.edit__1_;
-            this.btnAnotacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnotacoes.Location = new System.Drawing.Point(0, 0);
-            this.btnAnotacoes.Name = "btnAnotacoes";
-            this.btnAnotacoes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAnotacoes.Size = new System.Drawing.Size(216, 58);
-            this.btnAnotacoes.TabIndex = 22;
-            this.btnAnotacoes.Text = "Anotações";
-            this.btnAnotacoes.UseVisualStyleBackColor = false;
-            this.btnAnotacoes.UseWaitCursor = true;
-            this.btnAnotacoes.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pnSair
-            // 
-            this.pnSair.BackColor = System.Drawing.Color.Black;
-            this.pnSair.Controls.Add(this.btnSair);
-            this.pnSair.Location = new System.Drawing.Point(3, 431);
-            this.pnSair.Name = "pnSair";
-            this.pnSair.Size = new System.Drawing.Size(216, 57);
-            this.pnSair.TabIndex = 31;
-            this.pnSair.UseWaitCursor = true;
-            // 
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.Black;
@@ -282,10 +280,40 @@
             this.btnSair.UseWaitCursor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
             // 
-            // sidebarTransition
+            // btnHam
             // 
-            this.sidebarTransition.Interval = 10;
-            this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
+            this.btnHam.Image = ((System.Drawing.Image)(resources.GetObject("btnHam.Image")));
+            this.btnHam.Location = new System.Drawing.Point(11, 3);
+            this.btnHam.Name = "btnHam";
+            this.btnHam.Size = new System.Drawing.Size(45, 30);
+            this.btnHam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnHam.TabIndex = 23;
+            this.btnHam.TabStop = false;
+            this.btnHam.Click += new System.EventHandler(this.btnHam_Click_1);
+            // 
+            // nightControlBox1
+            // 
+            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nightControlBox1.DefaultLocation = true;
+            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMaximizeButton = true;
+            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMinimizeButton = true;
+            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.Location = new System.Drawing.Point(1127, 2);
+            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Name = "nightControlBox1";
+            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
+            this.nightControlBox1.TabIndex = 23;
             // 
             // Menu
             // 
@@ -297,7 +325,7 @@
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Menu";
@@ -305,14 +333,14 @@
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.sidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnAnotacoes.ResumeLayout(false);
+            this.pnListaLeitura.ResumeLayout(false);
             this.pnDocumento.ResumeLayout(false);
             this.pnCalendario.ResumeLayout(false);
-            this.pnListaLeitura.ResumeLayout(false);
-            this.pnAnotacoes.ResumeLayout(false);
             this.pnSair.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,5 +364,6 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnHam;
+        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
     }
 }

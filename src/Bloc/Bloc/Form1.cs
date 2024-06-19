@@ -13,14 +13,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace Bloc
 {
 
-
-
     public partial class Form1 : Form
     {
         
 
         
-            private static string stringdeconecxao = "Server=(localdb)\\MSSQLLocalDB;Database=BlocDB;Trusted_Connection=True;TrustServerCertificate=True;";
+            private static string stringdeconecxao = "Server=(localdb)\\MSSQLLocalDB;Database=BlocDBB;Trusted_Connection=True;TrustServerCertificate=True;";
             private static SqlConnection db = new SqlConnection(stringdeconecxao);
 
         public Form1()
@@ -28,9 +26,6 @@ namespace Bloc
                 InitializeComponent();
         
             }
-
-
-
 
         private void btnCriarConta_Click(object sender, EventArgs e)
         {
@@ -46,61 +41,60 @@ namespace Bloc
                 this.Show();
             });
             this.Hide();
-            criarconta.ShowDialog(); ;
+            criarconta.ShowDialog();
         }
 
-            private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtNome.Text;
+            string password = txtPalavraPasse.Text;
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                string username = txtNome.Text;
-                string password = txtPalavraPasse.Text;
+                MessageBox.Show("Por favor, preencha o nome de utilizador e a palavra-passe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                {
-                    MessageBox.Show("Por favor, preencha o nome de utilizador e a palavra-passe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (VerifyLogin(username, password))
-                {
-                    MessageBox.Show("Login bem-sucedido!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                     Menu menu = new Menu();
-                     menu.Owner = this; 
-                     this.Hide();
-                     menu.Show(); 
-
+            if (VerifyLogin(username, password))
+            {
+                MessageBox.Show("Login bem-sucedido!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Menu menu = new Menu();
+                menu.Owner = this;
+                this.Hide();
+                menu.Show();
             }
             else
-                {
-                    MessageBox.Show("Nome de utilizador ou palavra-passe incorretos. Por favor, tente novamente ou crie uma conta.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            private bool VerifyLogin(string username, string password)
             {
-                string query = "SELECT COUNT(1) FROM Utilizador WHERE Username = @Username AND PasswordHash = @PasswordHash";
+                MessageBox.Show("Nome de utilizador ou palavra-passe incorretos. Por favor, tente novamente ou crie uma conta.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-                try
+        private bool VerifyLogin(string username, string password)
+        {
+            string query = "SELECT COUNT(1) FROM Utilizador WHERE Username = @Username AND PasswordHash = @PasswordHash";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(stringdeconecxao))
                 {
-                    using (SqlConnection connection = new SqlConnection(stringdeconecxao))
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        connection.Open();
-                        using (SqlCommand command = new SqlCommand(query, connection))
-                        {
-                            command.Parameters.AddWithValue("@Username", username);
-                            command.Parameters.AddWithValue("@PasswordHash", password);
+                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@PasswordHash", password);
 
-                            int userCount = (int)command.ExecuteScalar();
-                            return userCount == 1;
-                        }
+                        int userCount = (int)command.ExecuteScalar();
+                        return userCount == 1;
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
             }
-        
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {

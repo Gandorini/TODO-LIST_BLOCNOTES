@@ -9,12 +9,6 @@ CREATE TABLE Utilizador (
 );
 
 
-CREATE TABLE Categorias (
-    CategoriaID INT PRIMARY KEY IDENTITY(1,1),
-    CategoriaNome NVARCHAR(50) NOT NULL UNIQUE,
-	NomeObra NVARCHAR(50),
-	Description NVARCHAR(2000)
-);
 
 
 CREATE TABLE ListaLeitura (
@@ -27,12 +21,7 @@ CREATE TABLE ListaLeitura (
     FOREIGN KEY (CategoryID) REFERENCES Categorias(CategoriaID)
 );
 
-CREATE TABLE  Anotacoes (
-	UserID INT NOT NULL,
-	CategoriasID INT,
-    AnotacoesTxt NVARCHAR(MAX) NOT NULL,
-	FOREIGN KEY (CategoriasID) REFERENCES Categorias(CategoriaID)
-);
+
 
 CREATE TABLE Documents (
     DocumentID INT PRIMARY KEY IDENTITY(1,1),
@@ -48,3 +37,42 @@ CREATE TABLE CalendarioMarcacoes (
     Localizacao NVARCHAR(100)
 );
 
+INSERT INTO Categorias (CategoriaNome)
+VALUES ('Supermercado'),
+       ('Trabalho'),
+       ('Estudos'),
+       ('Pessoais'),
+       ('Diario'),
+       ('Outro...');
+
+SELECT * FROM Anotacoes
+
+ALTER TABLE Anotacoes
+DROP CONSTRAINT UC_NomeCategoria;
+
+
+CREATE TABLE Categorias (
+    CategoriaID INT PRIMARY KEY IDENTITY(1,1),
+    CategoriaNome NVARCHAR(50) NOT NULL UNIQUE,
+    NomeObra NVARCHAR(50),
+    Description NVARCHAR(2000)
+);
+
+-- Criação da tabela Anotacoes
+CREATE TABLE Anotacoes (
+    UserID INT NOT NULL,
+    NomeTXT NVARCHAR(MAX) NOT NULL,
+    AnotacoesTxt NVARCHAR(MAX) NOT NULL,
+    CategoriaNome NVARCHAR(50) NOT NULL,
+    FOREIGN KEY (CategoriaNome) REFERENCES Categorias(CategoriaNome)
+	);
+
+	DROP TABLE IF EXISTS Anotacoes;
+	DROP TABLE IF EXISTS Categorias;
+
+
+	ALTER TABLE Categorias
+	DROP COLUMN CategoriaNome;
+
+	ALTER TABLE Anotacoes
+	DROP CONSTRAINT FK_Anotacoes_Categorias;

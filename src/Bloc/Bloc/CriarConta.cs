@@ -14,7 +14,7 @@ namespace Bloc
 {
     public partial class CriarConta : Form
     {
-        private static string stringconexao = "Server=(localdb)\\MSSQLLocalDB;Database=BlocDB;Trusted_Connection=True;TrustServerCertificate=True";
+        private static string stringconexao = "Server=(localdb)\\MSSQLLocalDB;Database=BlocDBB;Trusted_Connection=True;TrustServerCertificate=True";
         private SqlConnection connection = new SqlConnection(stringconexao);
 
         public string NomeUtilizador { get; set; }
