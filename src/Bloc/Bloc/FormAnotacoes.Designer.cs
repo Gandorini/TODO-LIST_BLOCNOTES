@@ -44,7 +44,7 @@ namespace Bloc
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(260, 81);
+            this.label1.Location = new System.Drawing.Point(229, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 25);
             this.label1.TabIndex = 0;
@@ -52,14 +52,14 @@ namespace Bloc
             // 
             // txtNomeAnota
             // 
-            this.txtNomeAnota.Location = new System.Drawing.Point(338, 83);
+            this.txtNomeAnota.Location = new System.Drawing.Point(307, 89);
             this.txtNomeAnota.Name = "txtNomeAnota";
             this.txtNomeAnota.Size = new System.Drawing.Size(167, 20);
             this.txtNomeAnota.TabIndex = 1;
             // 
             // txtAnotacoesTexto
             // 
-            this.txtAnotacoesTexto.Location = new System.Drawing.Point(578, 81);
+            this.txtAnotacoesTexto.Location = new System.Drawing.Point(547, 87);
             this.txtAnotacoesTexto.MaxLength = 999999999;
             this.txtAnotacoesTexto.Name = "txtAnotacoesTexto";
             this.txtAnotacoesTexto.Size = new System.Drawing.Size(658, 20);
@@ -69,7 +69,7 @@ namespace Bloc
             // btnVisualizar
             // 
             this.btnVisualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisualizar.Location = new System.Drawing.Point(578, 505);
+            this.btnVisualizar.Location = new System.Drawing.Point(547, 511);
             this.btnVisualizar.Name = "btnVisualizar";
             this.btnVisualizar.Size = new System.Drawing.Size(216, 41);
             this.btnVisualizar.TabIndex = 3;
@@ -80,7 +80,7 @@ namespace Bloc
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(1020, 505);
+            this.btnSalvar.Location = new System.Drawing.Point(989, 511);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(216, 41);
             this.btnSalvar.TabIndex = 4;
@@ -91,7 +91,7 @@ namespace Bloc
             // cbCategorias
             // 
             this.cbCategorias.FormattingEnabled = true;
-            this.cbCategorias.Location = new System.Drawing.Point(338, 174);
+            this.cbCategorias.Location = new System.Drawing.Point(307, 180);
             this.cbCategorias.Name = "cbCategorias";
             this.cbCategorias.Size = new System.Drawing.Size(167, 21);
             this.cbCategorias.TabIndex = 5;
@@ -101,17 +101,17 @@ namespace Bloc
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(345, 138);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(293, 147);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 20);
+            this.label2.Size = new System.Drawing.Size(181, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Escolha a Categoria :";
             // 
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(799, 505);
+            this.btnLimpar.Location = new System.Drawing.Point(768, 511);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(216, 41);
             this.btnLimpar.TabIndex = 7;
@@ -123,7 +123,8 @@ namespace Bloc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1293, 715);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(1267, 709);
             this.ControlBox = false;
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.label2);

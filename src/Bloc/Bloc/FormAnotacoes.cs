@@ -18,6 +18,9 @@ namespace Bloc
         private static string stringdeconecxao = "Server=(localdb)\\MSSQLLocalDB;Database=BlocDBB;Trusted_Connection=True;TrustServerCertificate=True;";
         private static SqlConnection db = new SqlConnection(stringdeconecxao);
 
+
+        private int savedX;
+        private int savedY;
         public FormAnotacoes()
         {
             InitializeComponent();
@@ -29,7 +32,14 @@ namespace Bloc
             FormAnotacoes_Load(this, EventArgs.Empty);
         }
 
+        private void SaveFormPosition()
+        {
 
+            savedX = this.Location.X;
+            savedY = this.Location.Y;
+        }
+
+        
         private void FormAnotacoes_Load(object sender, EventArgs e)
         {
 
@@ -57,13 +67,20 @@ namespace Bloc
                     MessageBox.Show($"Erro ao carregar categorias: {ex.Message}", "ERRO CATEGORIAS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            this.Location = new Point(savedX, savedY);
+        }
+
+        private void FormAnotacoes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            SaveFormPosition();
         }
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
             string query = @"
         SELECT a.NomeTXT, c.CategoriaNome, a.AnotacoesTxt 
-        FROM Anotacoes a
+        FROM Anotacoess a
         JOIN Categorias c ON a.CategoriaNome = c.CategoriaNome";
 
             using (SqlConnection db = new SqlConnection(stringdeconecxao))
@@ -110,7 +127,7 @@ namespace Bloc
                 return;
             }
 
-            string query = "INSERT INTO Anotacoes (NomeTXT, CategoriaNome, AnotacoesTxt) VALUES (@NomeTXT, @CategoriaNome, @AnotacoesTxt)";
+            string query = "INSERT INTO Anotacoess (NomeTXT, CategoriaNome, AnotacoesTxt) VALUES (@NomeTXT, @CategoriaNome, @AnotacoesTxt)";
 
             using (SqlConnection connection = new SqlConnection(stringdeconecxao))
             {

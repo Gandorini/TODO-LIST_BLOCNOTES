@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BlocDBBDataSet" targetNamespace="http://tempuri.org/BlocDBBDataSet.xsd" xmlns:mstns="http://tempuri.org/BlocDBBDataSet.xsd" xmlns="http://tempuri.org/BlocDBBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BlocDBBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BlocDBBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Bloc.Properties.Settings.GlobalReference.Default.BlocDBBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListaLeituraaTableAdapter" GeneratorDataComponentClassName="ListaLeituraaTableAdapter" Name="ListaLeituraa" UserDataComponentName="ListaLeituraaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BlocDBBConnectionString (Settings)" DbObjectName="BlocDBB.dbo.ListaLeituraa" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CategoriaNome FROM dbo.ListaLeituraa</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CategoriaNome" DataSetColumn="CategoriaNome" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BlocDBBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="BlocDBBDataSet" msprop:Generator_DataSetName="BlocDBBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ListaLeituraa" msprop:Generator_RowEvHandlerName="ListaLeituraaRowChangeEventHandler" msprop:Generator_RowDeletedName="ListaLeituraaRowDeleted" msprop:Generator_RowDeletingName="ListaLeituraaRowDeleting" msprop:Generator_RowEvArgName="ListaLeituraaRowChangeEvent" msprop:Generator_TablePropName="ListaLeituraa" msprop:Generator_RowChangedName="ListaLeituraaRowChanged" msprop:Generator_RowChangingName="ListaLeituraaRowChanging" msprop:Generator_TableClassName="ListaLeituraaDataTable" msprop:Generator_RowClassName="ListaLeituraaRow" msprop:Generator_TableVarName="tableListaLeituraa" msprop:Generator_UserTableName="ListaLeituraa">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CategoriaNome" msprop:Generator_ColumnPropNameInRow="CategoriaNome" msprop:Generator_ColumnPropNameInTable="CategoriaNomeColumn" msprop:Generator_ColumnVarNameInTable="columnCategoriaNome" msprop:Generator_UserColumnName="CategoriaNome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
