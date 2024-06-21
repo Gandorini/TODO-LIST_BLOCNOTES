@@ -36,8 +36,9 @@
             this.btnCriarConta = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
+            this.linklbPalavrapasse = new ReaLTaiizor.Controls.LinkLabelEdit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,8 +69,8 @@
             // txtPalavraPasse
             // 
             this.txtPalavraPasse.Location = new System.Drawing.Point(177, 297);
-            this.txtPalavraPasse.Multiline = true;
             this.txtPalavraPasse.Name = "txtPalavraPasse";
+            this.txtPalavraPasse.PasswordChar = '*';
             this.txtPalavraPasse.Size = new System.Drawing.Size(449, 20);
             this.txtPalavraPasse.TabIndex = 4;
             this.txtPalavraPasse.UseSystemPasswordChar = true;
@@ -109,18 +110,6 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Palavra-Passe:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(693, 76);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(545, 518);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // nightControlBox1
             // 
             this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -136,7 +125,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(1127, -1);
+            this.nightControlBox1.Location = new System.Drawing.Point(1145, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -144,6 +133,37 @@
             this.nightControlBox1.Name = "nightControlBox1";
             this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox1.TabIndex = 11;
+            // 
+            // linklbPalavrapasse
+            // 
+            this.linklbPalavrapasse.ActiveLinkColor = System.Drawing.Color.Gold;
+            this.linklbPalavrapasse.AutoSize = true;
+            this.linklbPalavrapasse.BackColor = System.Drawing.Color.Transparent;
+            this.linklbPalavrapasse.DisabledLinkColor = System.Drawing.Color.White;
+            this.linklbPalavrapasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklbPalavrapasse.ForeColor = System.Drawing.Color.White;
+            this.linklbPalavrapasse.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linklbPalavrapasse.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.linklbPalavrapasse.Location = new System.Drawing.Point(395, 320);
+            this.linklbPalavrapasse.Name = "linklbPalavrapasse";
+            this.linklbPalavrapasse.Size = new System.Drawing.Size(231, 20);
+            this.linklbPalavrapasse.TabIndex = 12;
+            this.linklbPalavrapasse.TabStop = true;
+            this.linklbPalavrapasse.Text = "Esqueçeu a palavra-passe?";
+            this.linklbPalavrapasse.VisitedLinkColor = System.Drawing.Color.White;
+            this.linklbPalavrapasse.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbPalavrapasse_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.Location = new System.Drawing.Point(693, 76);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(545, 518);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -155,8 +175,9 @@
             this.BackgroundImage = global::Bloc.Properties.Resources.pngtree_abstract_gradient_background_in_shades_of_gray_3d_render_picture_image_3550157_transformed1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1268, 642);
-            this.Controls.Add(this.nightControlBox1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.linklbPalavrapasse);
+            this.Controls.Add(this.nightControlBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnCriarConta);
@@ -185,6 +206,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private ReaLTaiizor.Controls.LinkLabelEdit linklbPalavrapasse;
     }
 }
 

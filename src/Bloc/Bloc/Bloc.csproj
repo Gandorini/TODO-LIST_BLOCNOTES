@@ -203,6 +203,12 @@
     <Compile Include="CriarConta.Designer.cs">
       <DependentUpon>CriarConta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Esqueceuapp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Esqueceuapp.Designer.cs">
+      <DependentUpon>Esqueceuapp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CriarConta.resx">
       <DependentUpon>CriarConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Esqueceuapp.resx">
+      <DependentUpon>Esqueceuapp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -396,6 +405,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pngtree-abstract-gradient-background-in-shades-of-gray-3d-render-picture-image_3550157-transformed2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brown and Orange Notepad with Pen Simple Education Logo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

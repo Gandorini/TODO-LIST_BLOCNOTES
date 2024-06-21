@@ -123,6 +123,16 @@ namespace Bloc.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Brown_and_Orange_Notepad_with_Pen_Simple_Education_Logo1 {
+            get {
+                object obj = ResourceManager.GetObject("Brown and Orange Notepad with Pen Simple Education Logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calendar {
             get {
                 object obj = ResourceManager.GetObject("calendar", resourceCulture);

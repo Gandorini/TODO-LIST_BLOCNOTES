@@ -119,3 +119,4 @@ C:\Users\2222123\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorin
 C:\Users\2222123\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
 C:\Users\2222123\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 C:\Users\2222123\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\2222123\OneDrive - Escola Digital\Documentos\PSI1622P_Walisson_Gandorini_2222123\src\Bloc\Bloc\obj\Debug\Bloc.Esqueceuapp.resources

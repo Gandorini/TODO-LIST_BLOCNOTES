@@ -126,7 +126,23 @@ namespace Bloc
             this.Close();
         }
 
-        
+        private void linklbPalavrapasse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Esqueceuapp forgotPasswordForm = new Esqueceuapp();
+         
+
+            forgotPasswordForm.FormClosed += new FormClosedEventHandler((sende, a) =>
+            {
+                if (forgotPasswordForm.DialogResult == DialogResult.OK)
+                {
+                    txtNome.Text = forgotPasswordForm.NomeUtilizador;
+                    txtPalavraPasse.Text = forgotPasswordForm.Password;
+                }
+                this.Show();
+            });
+            this.Hide();
+            forgotPasswordForm.ShowDialog();
+        }
     }
 }
 

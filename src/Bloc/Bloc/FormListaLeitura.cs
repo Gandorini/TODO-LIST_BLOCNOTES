@@ -52,6 +52,16 @@ namespace Bloc
 
         private void cbcategoriasLivros_SelectedIndexChanged(object sender, EventArgs e)
         {
+ 
+        }
+
+        private void foreverTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalvarObra_Click(object sender, EventArgs e)
+        {
 
         }
     }
