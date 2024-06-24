@@ -3,8 +3,12 @@ CREATE TABLE Utilizador (
     Username NVARCHAR(50) NOT NULL UNIQUE,
     PasswordHash NVARCHAR(100) NOT NULL
 );
- 
 
+Use BlocDBB
+ALTER TABLE Categorias
+ADD CategoriaTipo NVARCHAR(50) NOT NULL DEFAULT 'Anotacao';
+
+Select * from Categorias
  
 CREATE TABLE Categorias (
     CategoriaID INT PRIMARY KEY IDENTITY(1,1),
@@ -13,7 +17,7 @@ CREATE TABLE Categorias (
 	CONSTRAINT UQ_CategoriaNome UNIQUE (CategoriaNome)
 );
  
-
+ Select * From Utilizador
 
 CREATE TABLE ListaLeituraa (
     ReadingID INT PRIMARY KEY IDENTITY(1,1),
@@ -22,7 +26,6 @@ CREATE TABLE ListaLeituraa (
 	FOREIGN KEY (CategoriaNome) REFERENCES Categorias(CategoriaNome)
 );
  
-
 
 
 CREATE TABLE  Anotacoess (

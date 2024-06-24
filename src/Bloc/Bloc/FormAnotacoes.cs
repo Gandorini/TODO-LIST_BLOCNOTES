@@ -44,8 +44,7 @@ namespace Bloc
         {
 
             cbCategorias.Items.Clear();
-
-            string query = "SELECT CategoriaNome FROM Categorias";
+            string query = "SELECT CategoriaNome FROM Categorias WHERE CategoriaTipo = 'Anotacao'";
 
             using (SqlConnection connection = new SqlConnection(stringdeconecxao))
             using (SqlCommand command = new SqlCommand(query, connection))

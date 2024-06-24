@@ -9,14 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
-
+using System.Data.SqlClient;
 namespace Bloc
 {
    
     public partial class Menu : Form
     {
+
+        private static string stringdeconecxao = "Server=(localdb)\\MSSQLLocalDB;Database=BlocDBB;Trusted_Connection=True;TrustServerCertificate=True;";
+        private static SqlConnection db = new SqlConnection(stringdeconecxao);
+
+
+
         private FormAnotacoes anotacoes;
         private FormDocumentos documentos;
         private FormListaLeitura listaLeitura;
@@ -258,6 +262,114 @@ namespace Bloc
            form1.Show();
         }
 
+        private void linklbremoverconta_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            int userIdToDelete = ObterIdDoUsuarioParaExcluir();
+
+            if (userIdToDelete > 0)
+            {
+                if (ConfirmarExclusaoUsuario(userIdToDelete))
+                {
+                    MessageBox.Show("Conta excluída com sucesso.", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
+                    Form1 loginForm = new Form1();
+                    loginForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Exclusão cancelada pelo usuário.", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private int ObterIdDoUsuarioParaExcluir()
+        {
+            string username = Prompt.ShowDialog("Por favor, insira o nome de usuário:", "Excluir Usuário");
+
+            if (string.IsNullOrEmpty(username))
+            {
+                MessageBox.Show("Nome de usuário não pode estar vazio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(stringdeconecxao))
+                {
+                    connection.Open();
+                    string query = "SELECT UserID FROM Utilizador WHERE Username = @Username";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Username", username);
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            return Convert.ToInt32(result);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return -1;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+        }
+
+        private bool ConfirmarExclusaoUsuario(int userId)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(stringdeconecxao))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("sp_ConfirmarExclusaoUsuario", connection);
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@UserID", userId);
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao tentar excluir usuário: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+    }
+    public static class Prompt
+    {
+        public static string ShowDialog(string text, string caption)
+        {
+            Form prompt = new Form()
+            {
+                Width = 400,
+                Height = 200,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                Text = caption,
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            Label textLabel = new Label() { Left = 50, Top = 20, Text = text };
+            TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 300 };
+            Button confirmation = new Button() { Text = "Ok", Left = 250, Width = 100, Top = 100, DialogResult = DialogResult.OK };
+            confirmation.Click += (sender, e) => { prompt.Close(); };
+            prompt.Controls.Add(textBox);
+            prompt.Controls.Add(confirmation);
+            prompt.Controls.Add(textLabel);
+            prompt.AcceptButton = confirmation;
+
+            return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "";
+        }
     }
 
 }

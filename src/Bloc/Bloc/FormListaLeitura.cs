@@ -22,25 +22,40 @@ namespace Bloc
 
         public FormListaLeitura()
         {
-            cbcategoriasLivros.Items.Add("Terror");
-            cbcategoriasLivros.Items.Add("Comédia");
-            cbcategoriasLivros.Items.Add("Aventura");
-            cbcategoriasLivros.Items.Add("Drama");
-            cbcategoriasLivros.Items.Add("Suspense");
-            cbcategoriasLivros.Items.Add("Ficção-Científica");
-            cbcategoriasLivros.Items.Add("Teatro");
             InitializeComponent();
+            FormListaLeitura_Load(this, EventArgs.Empty);
         }
 
         private void FormListaLeitura_Load(object sender, EventArgs e)
         {
-   
+            cbcategoriasLivros.Items.Clear();
+            string query = "SELECT CategoriaNome FROM Categorias WHERE CategoriaTipo = 'GeneroLivro'";
+
+            using (SqlConnection connection = new SqlConnection(stringdeconecxao))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string categoriaNome = reader.GetString(0);
+                            cbcategoriasLivros.Items.Add(categoriaNome);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao carregar categorias: {ex.Message}", "ERRO CATEGORIAS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             this.Location = new Point(savedX, savedY);
         }
 
         private void SaveFormPosition()
         {
-       
             savedX = this.Location.X;
             savedY = this.Location.Y;
         }
@@ -52,17 +67,41 @@ namespace Bloc
 
         private void cbcategoriasLivros_SelectedIndexChanged(object sender, EventArgs e)
         {
- 
-        }
-
-        private void foreverTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            // Lógica quando a categoria selecionada muda
         }
 
         private void btnSalvarObra_Click(object sender, EventArgs e)
         {
+            string nomeObra = TxtNomeObra.Text;
+            string categoria = cbcategoriasLivros.SelectedItem as string;
 
+            if (string.IsNullOrWhiteSpace(nomeObra) || string.IsNullOrWhiteSpace(categoria))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string query = "INSERT INTO ListaLeituraa (NomeObra, CategoriaNome) VALUES (@NomeObra, @CategoriaNome)";
+
+            using (SqlConnection connection = new SqlConnection(stringdeconecxao))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NomeObra", nomeObra);
+                    command.Parameters.AddWithValue("@CategoriaNome", categoria);
+
+                    try
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Obra salva com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Erro ao salvar a obra: {ex.Message}", "ERRO SALVAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

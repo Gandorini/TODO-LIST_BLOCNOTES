@@ -48,6 +48,7 @@
             this.btnCalendario = new System.Windows.Forms.Button();
             this.pnSair = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
+            this.linklbremoverconta = new ReaLTaiizor.Controls.LinkLabelEdit();
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
@@ -66,9 +67,10 @@
             this.lblDataAtual.BackColor = System.Drawing.Color.Transparent;
             this.lblDataAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.lblDataAtual.ForeColor = System.Drawing.Color.Black;
-            this.lblDataAtual.Location = new System.Drawing.Point(96, 7);
+            this.lblDataAtual.Location = new System.Drawing.Point(144, 11);
+            this.lblDataAtual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDataAtual.Name = "lblDataAtual";
-            this.lblDataAtual.Size = new System.Drawing.Size(100, 24);
+            this.lblDataAtual.Size = new System.Drawing.Size(158, 32);
             this.lblDataAtual.TabIndex = 14;
             this.lblDataAtual.Text = "21/03/2024";
             // 
@@ -81,8 +83,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblDataAtual);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1271, 39);
+            this.panel1.Size = new System.Drawing.Size(1906, 59);
             this.panel1.TabIndex = 20;
             // 
             // nightControlBox1
@@ -100,7 +103,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(1132, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(1748, 11);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -112,9 +115,10 @@
             // btnHam
             // 
             this.btnHam.Image = ((System.Drawing.Image)(resources.GetObject("btnHam.Image")));
-            this.btnHam.Location = new System.Drawing.Point(11, 3);
+            this.btnHam.Location = new System.Drawing.Point(16, 5);
+            this.btnHam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHam.Name = "btnHam";
-            this.btnHam.Size = new System.Drawing.Size(45, 30);
+            this.btnHam.Size = new System.Drawing.Size(68, 46);
             this.btnHam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnHam.TabIndex = 23;
             this.btnHam.TabStop = false;
@@ -123,8 +127,9 @@
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.Size = new System.Drawing.Size(150, 35);
             this.label1.TabIndex = 24;
             // 
             // sidebar
@@ -136,11 +141,13 @@
             this.sidebar.Controls.Add(this.pnDocumento);
             this.sidebar.Controls.Add(this.pnCalendario);
             this.sidebar.Controls.Add(this.pnSair);
+            this.sidebar.Controls.Add(this.linklbremoverconta);
             this.sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.sidebar.Location = new System.Drawing.Point(0, 36);
+            this.sidebar.Location = new System.Drawing.Point(0, 55);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Padding = new System.Windows.Forms.Padding(0, 90, 0, 20);
-            this.sidebar.Size = new System.Drawing.Size(223, 675);
+            this.sidebar.Padding = new System.Windows.Forms.Padding(0, 138, 0, 31);
+            this.sidebar.Size = new System.Drawing.Size(334, 1038);
             this.sidebar.TabIndex = 21;
             this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.menuContainer_Paint);
             // 
@@ -149,9 +156,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 93);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 143);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 76);
+            this.pictureBox1.Size = new System.Drawing.Size(324, 117);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
@@ -160,9 +168,10 @@
             // 
             this.pnAnotacoes.BackColor = System.Drawing.Color.Black;
             this.pnAnotacoes.Controls.Add(this.btnAnotacoes);
-            this.pnAnotacoes.Location = new System.Drawing.Point(3, 175);
+            this.pnAnotacoes.Location = new System.Drawing.Point(4, 270);
+            this.pnAnotacoes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnAnotacoes.Name = "pnAnotacoes";
-            this.pnAnotacoes.Size = new System.Drawing.Size(216, 58);
+            this.pnAnotacoes.Size = new System.Drawing.Size(324, 89);
             this.pnAnotacoes.TabIndex = 23;
             this.pnAnotacoes.UseWaitCursor = true;
             // 
@@ -178,9 +187,10 @@
             this.btnAnotacoes.Image = global::Bloc.Properties.Resources.edit__1_;
             this.btnAnotacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnotacoes.Location = new System.Drawing.Point(0, 0);
+            this.btnAnotacoes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAnotacoes.Name = "btnAnotacoes";
-            this.btnAnotacoes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAnotacoes.Size = new System.Drawing.Size(216, 58);
+            this.btnAnotacoes.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnAnotacoes.Size = new System.Drawing.Size(324, 89);
             this.btnAnotacoes.TabIndex = 22;
             this.btnAnotacoes.Text = "Anotações";
             this.btnAnotacoes.UseVisualStyleBackColor = false;
@@ -191,9 +201,10 @@
             // 
             this.pnListaLeitura.BackColor = System.Drawing.Color.Black;
             this.pnListaLeitura.Controls.Add(this.btnListaLeitura);
-            this.pnListaLeitura.Location = new System.Drawing.Point(3, 239);
+            this.pnListaLeitura.Location = new System.Drawing.Point(4, 369);
+            this.pnListaLeitura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnListaLeitura.Name = "pnListaLeitura";
-            this.pnListaLeitura.Size = new System.Drawing.Size(216, 58);
+            this.pnListaLeitura.Size = new System.Drawing.Size(324, 89);
             this.pnListaLeitura.TabIndex = 28;
             this.pnListaLeitura.UseWaitCursor = true;
             // 
@@ -209,9 +220,10 @@
             this.btnListaLeitura.Image = global::Bloc.Properties.Resources.book_open_cover;
             this.btnListaLeitura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListaLeitura.Location = new System.Drawing.Point(0, 0);
+            this.btnListaLeitura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnListaLeitura.Name = "btnListaLeitura";
-            this.btnListaLeitura.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnListaLeitura.Size = new System.Drawing.Size(216, 58);
+            this.btnListaLeitura.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnListaLeitura.Size = new System.Drawing.Size(324, 89);
             this.btnListaLeitura.TabIndex = 22;
             this.btnListaLeitura.Text = "Lista de leitura";
             this.btnListaLeitura.UseVisualStyleBackColor = false;
@@ -222,9 +234,10 @@
             // 
             this.pnDocumento.BackColor = System.Drawing.Color.Black;
             this.pnDocumento.Controls.Add(this.btnDocumentos);
-            this.pnDocumento.Location = new System.Drawing.Point(3, 303);
+            this.pnDocumento.Location = new System.Drawing.Point(4, 468);
+            this.pnDocumento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnDocumento.Name = "pnDocumento";
-            this.pnDocumento.Size = new System.Drawing.Size(216, 58);
+            this.pnDocumento.Size = new System.Drawing.Size(324, 89);
             this.pnDocumento.TabIndex = 29;
             this.pnDocumento.UseWaitCursor = true;
             // 
@@ -240,9 +253,10 @@
             this.btnDocumentos.Image = global::Bloc.Properties.Resources.document__1_;
             this.btnDocumentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDocumentos.Location = new System.Drawing.Point(0, 0);
+            this.btnDocumentos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDocumentos.Name = "btnDocumentos";
-            this.btnDocumentos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDocumentos.Size = new System.Drawing.Size(216, 58);
+            this.btnDocumentos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnDocumentos.Size = new System.Drawing.Size(324, 89);
             this.btnDocumentos.TabIndex = 22;
             this.btnDocumentos.Text = "Documentos";
             this.btnDocumentos.UseVisualStyleBackColor = false;
@@ -253,9 +267,10 @@
             // 
             this.pnCalendario.BackColor = System.Drawing.Color.Black;
             this.pnCalendario.Controls.Add(this.btnCalendario);
-            this.pnCalendario.Location = new System.Drawing.Point(3, 367);
+            this.pnCalendario.Location = new System.Drawing.Point(4, 567);
+            this.pnCalendario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnCalendario.Name = "pnCalendario";
-            this.pnCalendario.Size = new System.Drawing.Size(216, 58);
+            this.pnCalendario.Size = new System.Drawing.Size(324, 89);
             this.pnCalendario.TabIndex = 30;
             this.pnCalendario.UseWaitCursor = true;
             // 
@@ -271,9 +286,10 @@
             this.btnCalendario.Image = global::Bloc.Properties.Resources.icons8_calendar_24;
             this.btnCalendario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCalendario.Location = new System.Drawing.Point(0, 0);
+            this.btnCalendario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCalendario.Name = "btnCalendario";
-            this.btnCalendario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCalendario.Size = new System.Drawing.Size(216, 58);
+            this.btnCalendario.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnCalendario.Size = new System.Drawing.Size(324, 89);
             this.btnCalendario.TabIndex = 22;
             this.btnCalendario.Text = "Caléndario";
             this.btnCalendario.UseVisualStyleBackColor = false;
@@ -284,9 +300,10 @@
             // 
             this.pnSair.BackColor = System.Drawing.Color.Black;
             this.pnSair.Controls.Add(this.btnSair);
-            this.pnSair.Location = new System.Drawing.Point(3, 431);
+            this.pnSair.Location = new System.Drawing.Point(4, 666);
+            this.pnSair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnSair.Name = "pnSair";
-            this.pnSair.Size = new System.Drawing.Size(216, 57);
+            this.pnSair.Size = new System.Drawing.Size(324, 88);
             this.pnSair.TabIndex = 31;
             this.pnSair.UseWaitCursor = true;
             // 
@@ -301,14 +318,38 @@
             this.btnSair.Image = global::Bloc.Properties.Resources.exit__1_;
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSair.Location = new System.Drawing.Point(0, 0);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSair.Size = new System.Drawing.Size(216, 57);
+            this.btnSair.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnSair.Size = new System.Drawing.Size(324, 88);
             this.btnSair.TabIndex = 22;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.UseWaitCursor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
+            // 
+            // linklbremoverconta
+            // 
+            this.linklbremoverconta.ActiveLinkColor = System.Drawing.Color.Gold;
+            this.linklbremoverconta.AutoSize = true;
+            this.linklbremoverconta.BackColor = System.Drawing.Color.Transparent;
+            this.linklbremoverconta.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.linklbremoverconta.DisabledLinkColor = System.Drawing.Color.White;
+            this.linklbremoverconta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklbremoverconta.ForeColor = System.Drawing.Color.White;
+            this.linklbremoverconta.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linklbremoverconta.LinkColor = System.Drawing.Color.White;
+            this.linklbremoverconta.Location = new System.Drawing.Point(4, 759);
+            this.linklbremoverconta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linklbremoverconta.Name = "linklbremoverconta";
+            this.linklbremoverconta.Padding = new System.Windows.Forms.Padding(70, 80, 20, 0);
+            this.linklbremoverconta.Size = new System.Drawing.Size(283, 109);
+            this.linklbremoverconta.TabIndex = 33;
+            this.linklbremoverconta.TabStop = true;
+            this.linklbremoverconta.Text = "Remover Conta";
+            this.linklbremoverconta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linklbremoverconta.VisitedLinkColor = System.Drawing.Color.White;
+            this.linklbremoverconta.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbremoverconta_LinkClicked);
             // 
             // sidebarTransition
             // 
@@ -317,10 +358,10 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1267, 709);
+            this.ClientSize = new System.Drawing.Size(1900, 1091);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -328,6 +369,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
@@ -335,6 +377,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.sidebar.ResumeLayout(false);
+            this.sidebar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnAnotacoes.ResumeLayout(false);
             this.pnListaLeitura.ResumeLayout(false);
@@ -365,5 +408,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnHam;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private ReaLTaiizor.Controls.LinkLabelEdit linklbremoverconta;
     }
 }
