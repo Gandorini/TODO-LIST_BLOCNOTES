@@ -17,7 +17,16 @@ CREATE TABLE Categorias (
 	CONSTRAINT UQ_CategoriaNome UNIQUE (CategoriaNome)
 );
  
- Select * From Utilizador
+ Select * From Categorias
+
+ INSERT INTO Categorias (CategoriaNome, CategoriaTipo)
+VALUES ('Terror','GeneroLivro'),
+	   ('Suspense','GeneroLivro'),
+	   ('Ação','GeneroLivro'),
+	   ('Ficção-Científica','GeneroLivro'),
+	   ('Romance','GeneroLivro'),
+	   ('Documentário','GeneroLivro'),
+	   ('Drama','GeneroLivro');
 
 CREATE TABLE ListaLeituraa (
     ReadingID INT PRIMARY KEY IDENTITY(1,1),
