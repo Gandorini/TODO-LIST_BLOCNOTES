@@ -1,70 +1,80 @@
-# PSI1622P_Walisson_Gandorini_2222123
 
-BLOC | BEST NOTES |================ =================  =================
+# BLOC | BEST NOTES
 
+A **note-taking application** developed in **C#** using **Windows Forms**. This app allows users to write notes organized by categories, maintain a reading list by genres, import TXT documents, and use a calendar for scheduling tasks and reminders.
 
-Descrição
-Este é um aplicativo de anotações desenvolvido em C# utilizando Windows Forms.
- O aplicativo permite que você escreva anotações e as separe por categorias, mantenha uma lista de leitura organizada por gêneros, importe documentos TXT e utilize um calendário para fazer marcações.
+---
 
-Funcionalidades:
+## Features
 
-Anotações: Escreva e organize suas anotações por categorias.
-Lista de Leitura: Adicione livros que você já leu e organize-os por gêneros.
-Importação de Documentos: Importe documentos no formato TXT para suas anotações.
-Calendário: Faça marcações no calendário para organizar seus compromissos.
+- **Notes**: Write and organize notes by categories.  
+- **Reading List**: Add books you’ve read and organize them by genre.  
+- **Document Import**: Import TXT files directly into your notes.  
+- **Calendar**: Schedule tasks or reminders by selecting dates and adding events.
 
+---
 
-Tecnologias Utilizadas
+## Technologies Used
 
-Linguagem de Programação: C#
-Framework: Windows Forms
-Base de Dados: SQL Server Management Studio 2020
-Requisitos
+- **Programming Language**: C#  
+- **Framework**: Windows Forms  
+- **Database**: SQL Server Management Studio 2020  
 
-Visual Studio (recomendado: versão mais recente)
-.NET Framework (5.7)
-Base de dados configurada (V20.1)
+---
 
+## Requirements
 
+- Visual Studio (recommended: latest version)  
+- .NET Framework (5.7)  
+- Configured database (Version 20.1)  
 
-Compile e execute o projeto.
+---
 
-Utilização
+## Installation & Running the Project
 
-Anotações:
+1. Clone or download the repository.  
+2. Open the project in **Visual Studio**.  
+3. Ensure the database is configured.  
+4. Compile and run the project.  
 
-Adicione uma nova anotação clicando no botão "Nova Anotação".
-Insira o conteúdo da anotação e selecione uma categoria.
-Salve a anotação.
+---
 
-Lista de Leitura:
+## How to Use
 
-Adicione um novo livro à lista de leitura clicando no botão "Novo Livro".
-Insira o título do livro, autor e selecione o gênero.
-Salve o livro.
+### Notes
+1. Click **"New Note"** to create a note.  
+2. Enter the content and select a category.  
+3. Save the note.  
 
-Importação de Documentos:
+### Reading List
+1. Click **"New Book"** to add a book.  
+2. Enter the title, author, and select a genre.  
+3. Save the book.  
 
-Clique no botão "Importar Documento".
-Selecione um arquivo TXT do seu computador.
-O conteúdo do documento será importado para suas anotações.
+### Document Import
+1. Click **"Import Document"**.  
+2. Select a TXT file from your computer.  
+3. The content will be imported into your notes.  
 
+### Calendar
+1. Select a date in the calendar.  
+2. Add a new event with a title and description.  
+3. Save the event.  
 
-Calendário:
+---
 
-Selecione uma data no calendário.
-Adicione uma nova marcação inserindo um título e uma descrição.
-Salve a marcação.
-Contribuição
-Se você deseja contribuir com o projeto, siga os passos abaixo:
+## Contribution
 
-Fork o repositório.
+If you want to contribute:  
 
+1. Fork the repository.  
+2. Make your changes in a separate branch.  
+3. Submit a pull request for review.  
 
+---
 
-Este projeto está licenciado sob a licença de Escola Profissional de Tecnologia Digital.
+## License
 
-Contacto:
+This project is licensed under the **Escola Profissional de Tecnologia Digital License**.
 
-Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para abrir uma issue ou entrar em contato pelo e-mail: 2222123@alunos.escoladital.com
+---
