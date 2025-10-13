@@ -5,6 +5,12 @@ A **note-taking application** developed in **C#** using **Windows Forms**. This 
 
 ---
 
+## MAIN PAGE OF THE PROJECT
+
+<img width="1266" height="660" alt="imagem" src="https://github.com/user-attachments/assets/67cd1a33-22e2-4888-bf38-5f5348d7de80" />
+
+---
+
 ## Features
 
 - **Notes**: Write and organize notes by categories.  
