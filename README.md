@@ -75,4 +75,3 @@ Visual Studio (preferencialmente a versão mais recente)
 
 SQL Server Management Studio 20.x com a base de dados configurada
 
-🚀 Como Instalar e Executar
